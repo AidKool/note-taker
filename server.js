@@ -2,7 +2,7 @@ const express = require('express');
 const path = require('path');
 const app = express();
 
-port = 3000;
+port = process.env.PORT || 3000;
 
 const notes = require('./routes');
 
@@ -16,5 +16,3 @@ app.get('/notes', (req, res) => {
 });
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
-
-
