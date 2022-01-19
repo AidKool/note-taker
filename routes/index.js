@@ -1,7 +1,10 @@
 const express = require('express');
-const notes = require('./notesRouter');
 const router = express.Router();
 
-router.use('/api/notes', notes);
+const notesRouter = require('./notesRouter');
+const htmlRouter = require('./htmlRouter');
+
+router.use('/', htmlRouter);
+router.use('/api/notes', notesRouter);
 
 module.exports = router;
