@@ -1,7 +1,7 @@
 const express = require('express');
 const router = express.Router();
 
-const { getNotes, postNote, deleteNote } = require('../controllers/notes');
+const { getNotes, postNote, deleteNote } = require('../controllers/notesController');
 
 // get /api/notes
 router.get('/', getNotes);

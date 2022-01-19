@@ -1,5 +1,5 @@
 const express = require('express');
-const notes = require('./notes');
+const notes = require('./notesRouter');
 const router = express.Router();
 
 router.use('/api/notes', notes);
