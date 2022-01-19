@@ -36,6 +36,7 @@ async function deleteNote(req, res) {
     res.status(201).json({ success: true, data: db });
   } catch (error) {
     console.error(error);
+    res.status(400).json({ success: false, msg: 'Bad request' });
   }
 }
 
