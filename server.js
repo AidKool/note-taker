@@ -15,4 +15,8 @@ app.get('/notes', (req, res) => {
   res.sendFile(path.resolve(__dirname, './public/notes.html'));
 });
 
+app.get('*', (req, res) => {
+  res.redirect('/');
+});
+
 app.listen(port, () => console.log(`Listening on port ${port}`));
