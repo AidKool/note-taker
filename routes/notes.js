@@ -7,7 +7,7 @@ const fs = require('fs').promises;
 
 // get /api/notes
 router.get('/', (req, res) => {
-  res.json(db);
+  res.status(200).json(db);
 });
 
 // post /api/notes
