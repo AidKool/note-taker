@@ -17,6 +17,4 @@ app.get('/notes', (req, res) => {
 
 app.listen(port, () => console.log(`Listening on port ${port}`));
 
-// get /api/notes
-// post /api/notes
-// delete /api/notes/:id
+
