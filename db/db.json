@@ -1,1 +1,12 @@
-[{"title":"Test Title","text":"Test text"},{"title":"Test Title","text":"Test text"},{"title":"Test Title","text":"Test text"},{"title":"Test Title","text":"Test text"},{"title":"fff","text":"fff"},{"title":"a note title","text":"some text"}]
+[
+  {
+    "title": "Test Title",
+    "text": "Test Text",
+    "id": "a98a6eb2-0c88-4570-91b5-fbb015b17360"
+  },
+  {
+    "title": "Test Title",
+    "text": "Test Text",
+    "id": "d145b289-9124-4c3e-a471-ddc24c21548e"
+  }
+]

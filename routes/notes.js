@@ -1,9 +1,10 @@
 const express = require('express');
 const router = express.Router();
 
-const db = require('../db/db.json');
+let db = require('../db/db.json');
 const path = require('path');
 const fs = require('fs').promises;
+const { v4: uuidv4 } = require('uuid');
 
 // get /api/notes
 router.get('/', (req, res) => {
@@ -15,7 +16,9 @@ router.post('/', async (req, res) => {
   try {
     const title = req.body.title;
     const text = req.body.text;
-    const note = { title, text };
+    const id = uuidv4();
+
+    const note = { title, text, id };
     db.push(note);
     await fs.writeFile(
       path.resolve(__dirname, '../db/db.json'),
@@ -30,5 +33,17 @@ router.post('/', async (req, res) => {
 });
 
 // delete /api/notes/:id
+router.delete('/:id', async (req, res) => {
+  const id = req.params.id;
+  db = db.filter((note) => {
+    return note.id !== id;
+  });
+  await fs.writeFile(
+    path.resolve(__dirname, '../db/db.json'),
+    JSON.stringify(db)
+  );
+  console.log('Note deleted successfully');
+  res.status(201).json({ success: true, data: db });
+});
 
 module.exports = router;
