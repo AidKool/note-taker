@@ -1,6 +1,6 @@
 const path = require('path');
 
-function redirectHome(req, res) {
+function loadHomePage(req, res) {
   res.redirect('/');
 }
 
@@ -8,4 +8,4 @@ function loadNotesPage(req, res) {
   res.sendFile(path.resolve(__dirname, '../public/notes.html'));
 }
 
-module.exports = { redirectHome, loadNotesPage };
+module.exports = { loadHomePage, loadNotesPage };

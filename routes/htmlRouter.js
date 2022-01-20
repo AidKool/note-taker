@@ -2,14 +2,14 @@ const express = require('express');
 const router = express.Router();
 
 const {
-  redirectHome,
+  loadHomePage,
   loadNotesPage,
 } = require('../controllers/htmlController');
 
-// get /
-router.get('/', redirectHome);
-
 // get /notes
 router.get('/notes', loadNotesPage);
+
+// get *
+router.get('*', loadHomePage);
 
 module.exports = router;
